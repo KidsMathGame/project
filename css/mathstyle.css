@@ -3,7 +3,7 @@
   font-family: 'Amatic SC', cursive;
   src: url(link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Short+Stack");
 }
-
+/* Safe to say you probably don't need this. */
 * {}
 
 body {
@@ -20,6 +20,9 @@ h1, h2, h3, h4, h5, h6, legend {
   font-weight: bold;
 }
 
+/* Be careful with negative margins. Often times they're trying to fix
+   something that could be addressed by adjusting padding or margin elsewhere.
+*/
 h1 {
   font-size: 76pt;
   padding-left: 5%;
@@ -100,6 +103,14 @@ a:visited {
 
 
 /* forms styling*/
+/*  The rules in form and form score appear to be exactly the same.
+    You could put all the styles in a class and apply the class to
+    both elements or even better, just apply them to both selectors.
+    e.g.:
+    #form, #form-score {
+      ...
+    }
+*/
 #form {
   text-align: left;
   margin: 30px auto;

@@ -67,6 +67,14 @@ function clickHandler(){
 //MDN setInterval doc; I used setTimeout for a reason
 // as it will wait, then run: https://goo.gl/Ixj4Es
   var intervalID = window.setTimeout(playAddRound, gameClock());
+  //This also could have been done with an object. Objects can often
+  //work much like switches. For instance:
+  //var speeds = {
+  //  easy: 20000,
+  //  medium: 10000,
+  //  hard: 5000
+  //}
+  //var intervalId = window.setTimeout(playAddRound, speeds[newPlayer.speed])
   function gameClock() {
     var gameLength = newPlayer.speed;
     var timeSpan = 0;
@@ -101,6 +109,10 @@ function clickHandler(){
   function renderResults(){
     var elDiv = document.getElementById('results');
 // Display user name
+    //Varible names! I realize it can be annoying having to come
+    //up with all of these names but as someone else reading your code
+    //there's no clear perspective on what any of these variables are
+    //even for.
     var definition = document.createElement('dl');
     elDiv.appendChild(definition);
 
@@ -149,7 +161,8 @@ function clickHandler(){
     var wAnswer1 = document.createElement('dd');
     wAnswer1.textContent = wrongAnswers;
     definition.appendChild(wAnswer1);
-
+    //with a bit of consideration the better part of this
+    //function could have been turned into a loop
 
   }
   // This takes care of the local storage requirement.
@@ -273,6 +286,7 @@ function playerMathDifficulty() {
 
 // this will play one simple round, using only addition.
 function playAddRound() {
+  //Variable names!
   var a = playerMathDifficulty();
   globalFirstNumber = a;
   var b = playerMathDifficulty();
